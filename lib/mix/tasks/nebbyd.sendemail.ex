@@ -8,6 +8,10 @@ defmodule Mix.Tasks.Nebbyd.Sendemail do
   """
 
   def run(_args) do
+    IO.inspect(System.get_env("MAILGUN_DOMAIN"))
+    IO.inspect(System.get_env("MAILGUN_API_KEY"))
+
+
     IO.inspect(Nebbyd.Mailer.send_welcome_text_email("mccracken.joel@gmail.com"))
   end
 end
