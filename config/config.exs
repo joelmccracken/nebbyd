@@ -17,6 +17,10 @@ config :nebbyd, Nebbyd.Endpoint,
   pubsub: [name: Nebbyd.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
+config :nebbyd,
+  mailgun_domain: System.get_env("MAILGUN_DOMAIN"),
+  mailgun_key: System.get_env("MAILGUN_API_KEY")
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
